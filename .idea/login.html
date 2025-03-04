@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log in</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+        }
+
+
+        h1 {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .login-container {
+            display: flex;
+            flex-direction: column; /* Stack children vertically */
+            align-items: center; /* Center children horizontally */
+            width: 350px;
+            height: 350px;
+            padding: 20px;
+            background: white;
+            border: 1px solid greenYellow;
+            border-radius: 10px;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+        }
+
+        .login-form input {
+            width: 90%; /* Adjust width */
+            padding: 10px;
+            margin: 10px 0; /* Vertical spacing */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #login-btn{
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            width: 100px;
+            height: 50px;
+            margin-top: 100px;
+            border-radius: 5px;
+            border: 1px solid greenyellow;
+            background-color: white;
+            transition: background-color 0.3s ease-in-out 0.1s;
+        }
+
+        #login-btn:hover{
+            background-color: greenyellow;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<div class="login-container">
+    <h1>Enter your username and password</h1>
+  <form class="login-form">
+    <input name="username" type="text" placeholder="Username">
+    <input name="password" type="password" placeholder="Password">
+    <button id="login-btn" type="submit">Login</button>
+  </form>
+</div>
+
+
+<script src="login.js"></script>
+</body>
+</html>
