@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add A New Activity</title>
+    <link rel="stylesheet" type="text/css" href="/myCSS.css">
+</head>
+<body>
+    <h1> Add a new activity</h1>
+
+    <form id="bookingForm">
+
+        <div class="form-group"><label for="name">Name of the Activity:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group"><label for="description">Description and Requirements:</label>
+            <input type="text" id="description" name="description" required>
+        </div>
+
+        <div class="form-group"><label for="price">Price:</label>
+            <input type="number" id="price" name="price" min="0" required>
+        </div>
+
+        <div class="form-group"><label for="duration">Duration of the session (in minutes):</label>
+            <input type="number" id="duration" name="duration" required>
+        </div>
+
+        <div class="button-container">
+            <button type="submit" id="submit">Add The new Activity</button>
+        </div>
+    </form>
+
+    <script src="SubmitActivity.js"></script>
+
+</body>
+</html>
