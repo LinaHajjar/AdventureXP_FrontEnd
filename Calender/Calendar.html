@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Booking Calendar</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Calendar Container */
+        .calendar-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        button {
+            margin: 0 10px;
+            padding: 10px 15px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Calendar Table */
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        td:hover {
+            background-color: #f8d7da;
+            transition: background 0.3s ease-in-out;
+        }
+
+        /* Booking Info Section */
+        #booking-info {
+            margin-top: 20px;
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+            margin: 30px auto;
+            background: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+
+        #booking-info h2 {
+            color: #333;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        #selected-date {
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        #booking-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        #booking-list li {
+            background: #e9ecef;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            transition: background 0.3s ease-in-out;
+            font-size: 16px;
+        }
+
+        #booking-list li:hover {
+            background: #d6d8db;
+        }
+
+        /* Show booking info smoothly */
+        #booking-info:not(.hidden) {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>Booking Calendar</h1>
+
+<div class="calendar-container">
+    <button id="prev-month">←</button>
+    <h2 id="current-month"></h2>
+    <button id="next-month">→</button>
+</div>
+
+<table id="calendar">
+    <thead>
+    <tr>
+        <th>Sun</th> <th>Mon</th> <th>Tue</th> <th>Wed</th>
+        <th>Thu</th> <th>Fri</th> <th>Sat</th>
+    </tr>
+    </thead>
+    <tbody id="calendar-body"></tbody>
+</table>
+
+<div id="booking-info" class="hidden">
+    <h2>Bookings for <span id="selected-date"></span></h2>
+    <ul id="booking-list"></ul>
+</div>
+
+<script src="calendar.js"></script>
+
+</body>
+</html>
