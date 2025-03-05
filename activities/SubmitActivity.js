@@ -19,7 +19,7 @@ document.getElementById("submit").addEventListener("click", function() {
             duration: description,
         };
 
-        fetch("http://localhost:8080/api/activity", {
+        fetch("http://localhost:8080/api/activity/createActivity", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
