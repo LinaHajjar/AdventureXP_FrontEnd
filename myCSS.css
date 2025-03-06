@@ -93,3 +93,84 @@ button:hover {
     transition: background-color 0.3s;
 }
 
+/*Delete BUTTON*/
+.delete-button{
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: red;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.delete-button:hover{
+    transform: scale(1.1); /* Slightly increase size on hover */
+    background-color: darkred;
+}
+
+/*-------------------------------------Activities table CSS---------------------------------------------------------*/
+/* Table Styling */
+.activity-table {
+    width: 90%;
+    max-width: 1200px;
+    border-collapse: separate; /* Allows rounded corners */
+    border-spacing: 0; /* No gaps between cells */
+    margin: 30px auto;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px; /* Rounded corners for the table */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Table headers */
+.activity-table th {
+    background-color: #28a745; /* Primary color for headers */
+    color: darkgreen;
+    font-weight: bold;
+    text-transform: uppercase; /* Capitalize header text */
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+/* Rounded corners for the first and last header cells */
+.activity-table th:first-child {
+    border-top-left-radius: 10px; /* Top-left rounded corner */
+}
+
+.activity-table th:last-child {
+    border-top-right-radius: 10px; /* Top-right rounded corner */
+}
+
+/* Table cells */
+.activity-table td {
+    padding: 12px;
+    border: 1px solid #ddd; /* Add cell borders */
+    color: #28a745; /* Text color */
+    white-space: nowrap; /* Prevent text from wrapping within cells */
+}
+
+/* Rounded corners for the first and last cells of the last row */
+.activity-table tr:last-child td:first-child {
+    border-bottom-left-radius: 10px; /* Bottom-left rounded corner */
+}
+
+.activity-table tr:last-child td:last-child {
+    border-bottom-right-radius: 10px; /* Bottom-right rounded corner */
+}
+
+/* Alternate row styling */
+.activity-table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Light gray for alternate rows */
+}
+
+/* Row hover effect */
+.activity-table tr:hover {
+    background-color: #f1f1f1; /* Subtle highlight on hover */
+}
+
+.activity-table td {
+    color: #28a745;
+}
+
+/*-------------------------------------END OF Activities table CSS----------------------------------------------*/

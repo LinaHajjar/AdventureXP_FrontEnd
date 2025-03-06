@@ -1,4 +1,6 @@
-document.getElementById("submit").addEventListener("click", function() {
+document.getElementById("bookingForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
     const firstName = document.getElementById("firstName").value;
     const lastName = document.getElementById("lastName").value;
     const email =document.getElementById("email").value;
@@ -12,7 +14,7 @@ document.getElementById("submit").addEventListener("click", function() {
     if (!bookingDate || !activity || !bookingTime || !firstName || !lastName || !numberOfGuests) {
         alert("Please fill in all fields.");
         return;
-    }
+    };
 
     // Create an object with the form data
     const bookingData = {
@@ -27,22 +29,27 @@ document.getElementById("submit").addEventListener("click", function() {
     };
 
     // Send data to backend (for example, using a POST request)
-    fetch("http://localhost:8080/booking", {
+    fetch("http://localhost:8080/bookings/booking", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify(bookingData),
     })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Failed to add the new booking");
+            }
+            return response.json();
+        })
+
         .then(data => {
-            console.log("Booking successful:", data);
-            // Optionally show a confirmation message or reset the form
-            alert("Booking submitted successfully!");
-            document.getElementById("booking-form").reset(); // Reset the form
+            console.log("Booking successful:", data); //Debugging
+            document.getElementById("message").textContent ="Booking submitted successfully!!";
+            document.getElementById("bookingForm").reset(); // Reset the form
         })
         .catch(error => {
             console.error("Error submitting booking:", error);
-            alert("An error occurred while submitting the booking.");
+            document.getElementById("message").textContent ="An error occurred while submitting the booking.";
         });
 });
