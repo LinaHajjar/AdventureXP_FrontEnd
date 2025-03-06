@@ -1,0 +1,40 @@
+/* Make sure the background image covers the whole area */
+.blurred-background {
+    width: 100%;
+    height: 470px; /* Full height */
+    background-image: url('/header-footer-Pages/Minigolf.png'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    filter: blur(0.5px); /* Apply blur effect */
+    overflow: hidden;
+    position: relative;
+}
+
+/* Content container to overlay on top of the blurred background */
+.content-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 2; /* Ensure it stays on top of the blurred background */
+}
+
+/* Styling for the button */
+button {
+    font-size: 1.2em;
+    background-color: #66a6c9;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #4b8cba; /* Slight change on hover */
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="header-footer.css">
+  <title>Homepage</title>
+</head>
+<body>
+<!-- Dynamisk indlæsning af navigation og footer -->
+<div id="header-footer"></div>
+
+<!-- Hovedindhold, der er specifikt for denne side -->
+<main>
+  <h1>Cafe and shop</h1>
+</main>
+
+<script>
+  // Indlæs header og footer
+  fetch('header-footer.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('header-footer').innerHTML = data;
+          });
+</script>
+</body>
+</html>
