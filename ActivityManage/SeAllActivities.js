@@ -9,7 +9,7 @@ function fetchActivities(){
             displayActivities(data);
         })
         .catch(error =>{
-            console.error("error during reading the activities!", error);
+            console.error("error during reading the ActivityManage!", error);
         });
 }
 

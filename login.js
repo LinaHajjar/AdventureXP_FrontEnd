@@ -16,9 +16,9 @@ event.preventDefault();
         .then(response => response.text())
         .then(message => {
             if (message === "Welcome activity manager"){
-                window.location.href = "Activity.html"
+                window.location.href = "ActivityManage/ActivityManager.html"
             } else if (message === "Welcome reservation manager"){
-                window.location.href = "Reservation.html"
+                window.location.href = "ReservationManage/ReservationManager.html"
             } else {
                 alert("Login failed")
             }
