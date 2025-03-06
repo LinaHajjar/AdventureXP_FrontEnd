@@ -1,0 +1,99 @@
+/* Ensuring the body fills the whole height */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Header */
+header {
+    background-color: #007900; /* Dark Green */
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    max-height: 90px;
+    margin-right: 20px;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    margin-right: 30px;
+}
+
+header nav ul li a {
+    color: white;
+    font-size: 20px;  /* Increase the font size */
+    font-weight: bold;  /* Make the text bold */
+    /*padding: 10px;  /* Add some padding to create space around the text */
+}
+.navigation{
+    display: flex;
+    align-items: center;
+    font-family: Georgia;
+    font-size: 18px;
+    justify-content: space-around;
+    margin-right: 180px;
+}
+
+header nav .button {
+    background-color: orange;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+}
+.button {
+    font-size: 150%;
+    font-weight: bold;
+    color: white;
+    background-color: #66a6c9;
+    border: none;
+    border-radius: 20px;
+}
+/* Footer */
+footer {
+    background-color: #006400; /* Dark Green */
+    color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+}
+footer .footer-section {
+    text-align: center;
+}
+footer h3 {
+    margin-bottom: 10px;
+}
+/* Main content area */
+main {
+    margin-top: 120px;  /* Space for the fixed header */
+    margin-bottom: 120px;  /* Space for the fixed footer */
+    padding: 20px;
+    box-sizing: border-box;
+}
