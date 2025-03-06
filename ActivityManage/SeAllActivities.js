@@ -26,8 +26,8 @@ function displayActivities(activities) {
         <td>${activities.description}</td>
         <td>${activities.price}</td>
         <td>${activities.duration}</td>
-        <td><button onclick="deleteActivity('${activities.name}')">Delete</button></td>
-        <td><button onclick="editActivity('${activities.name}')">Edit</button></td>
+        <td><button class="btn btn-delete" onclick="deleteActivity('${activities.name}')">Delete</button></td>
+        <td><button class="btn btn-edit" onclick="editActivity('${activities.name}')">Edit</button></td>
     `;
 
         tbody.appendChild(row);
