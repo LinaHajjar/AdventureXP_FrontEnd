@@ -47,7 +47,7 @@ function deleteActivity(activityName){
                 if(response.ok){
                     fetchActivities();//update the new list after deleting
                 } else {
-                    alert("Error: could not delete the activity");
+                    alert("Error: The activity cannot be deleted as it is associated with a booking..");
                 }
             })
             .catch(error=>console.error("Error during deleting: ", error));
