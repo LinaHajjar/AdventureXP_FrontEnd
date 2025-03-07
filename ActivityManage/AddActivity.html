@@ -4,7 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add A New Activity</title>
-    <link rel="stylesheet" type="text/css" href="/myCSS.css">
+    <style>
+        /* Center everything */
+        body {
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f8ff;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+        }
+
+        /* Form container */
+        .main-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 123, 255, 0.2);
+            text-align: center;
+            width: 400px;
+        }
+
+        /* Headline centered above the form */
+        h1 {
+            color: #007bff;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center; /* Ensure it's centered */
+        }
+
+        /* Label styling */
+        label {
+            font-weight: bold;
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+
+        /* Form group to align inputs */
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+            width: 100%;
+        }
+
+        /* Input fields */
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        /* Button container */
+        .button-container {
+            text-align: center;
+        }
+
+        /* Button styling */
+        button {
+            width: 100%;
+            padding: 12px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Message text */
+        #message {
+            color: green;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+    </style>
 </head>
 <body>
     <h1> Add a new activity</h1>

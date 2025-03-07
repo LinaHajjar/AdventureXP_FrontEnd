@@ -26,8 +26,8 @@ function displayActivities(activities) {
         <td>${activities.description}</td>
         <td>${activities.price}</td>
         <td>${activities.duration}</td>
-        <td><button onclick="deleteActivity('${activities.name}')">Delete</button></td>
-        <td><button onclick="editActivity('${activities.name}')">Edit</button></td>
+        <td><button class="btn btn-delete" onclick="deleteActivity('${activities.name}')">Delete</button></td>
+        <td><button class="btn btn-edit" onclick="editActivity('${activities.name}')">Edit</button></td>
     `;
 
         tbody.appendChild(row);
@@ -47,7 +47,7 @@ function deleteActivity(activityName){
                 if(response.ok){
                     fetchActivities();//update the new list after deleting
                 } else {
-                    alert("Error: could not delete the activity");
+                    alert("Error: The activity cannot be deleted as it is associated with a booking..");
                 }
             })
             .catch(error=>console.error("Error during deleting: ", error));
