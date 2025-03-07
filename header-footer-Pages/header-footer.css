@@ -7,7 +7,7 @@ html, body {
 
 /* Header */
 header {
-    background-color: #007900; /* Dark Green */
+    background-color: #4a9dbf; /* Dark Green */
     color: white;
     position: fixed;
     top: 0;
@@ -73,7 +73,7 @@ header nav .button {
 }
 /* Footer */
 footer {
-    background-color: #006400; /* Dark Green */
+    background-color: #4a9dbf; /* Dark Green */
     color: white;
     position: fixed;
     bottom: 0;
