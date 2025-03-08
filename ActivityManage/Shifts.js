@@ -2,12 +2,6 @@ document.addEventListener("DOMContentLoaded", function(){
     const urlParams = new URLSearchParams(window.location.search);
     const instructor_id=urlParams.get('instructor_id');
 
-    if (instructor_id){
-        fetchInstructorShifts(instructor_id);
-    } else {
-        document.getElementById('shift-table-body').innerHTML = "<tr><td colspan='5'>The trainer is not provided.</td></tr>";
-    }
-
 });
 
 function fetchInstructorShifts(instructor_id){
