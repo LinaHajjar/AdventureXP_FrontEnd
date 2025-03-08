@@ -5,32 +5,58 @@ document.addEventListener("DOMContentLoaded", function(){
 function fetchInstructors() {
     fetch("http://localhost:8080/instructors/all")
         .then(response => response.json())
-        .then(instructors => {
-            const tbody = document.querySelector(".activity-table tbody");
-            tbody.innerHTML = "";
-
-            instructors.forEach(instructor => {
-                const row = document.createElement("tr");
-
-                row.innerHTML = `
-                    <td>${instructor.instructor_id}</td>
-                    <td>${instructor.first_name}</td>
-                    <td>${instructor.last_name}</td>
-                    <td>${instructor.instructor_phone}</td>
-                    <td>${instructor.instructor_email}</td>
-                    <td>
-                        <button className="btn btn-edit" onClick="seAllShifts(${instructor.instuctor_id})">Shifts</button>
-                    </td>
-                `;
-                tbody.appendChild(row);
-
-            });
+        .then(data => {
+            fecthInstructors(data)
+            console.log(data)
         })
 
-        .catch(error => {
-            console.error("error during reading the list of trainers.", error);
-        });
 }
+
+
+function fecthInstructors(instructors) {
+    const container = document.querySelector(".instructors-container");
+    container.innerHTML = "";
+
+    instructors.forEach(instructor => {
+
+        const instructorItem = document.createElement("div")
+        instructorItem.classList.add("instructor-item");
+
+        instructorItem.innerHTML = `
+        <img src="3c97bed4-8337-43ae-b41b-372ae7e4e37b.webp">
+        <h2>Id: ${instructor.instructor_id} Fullname: ${instructor.first_name} ${instructor.last_name}</h2>
+        <p>Mail: ${instructor.instructor_email} Phone number: ${instructor.instructor_phone}</p>
+        <p>Adress: ${instructor.instructor_address}</p>
+        <button class="edit-instructor" data-id="${instructor.instructor_id}">Edit</button>
+        `
+
+        container.append(instructorItem)
+
+    })
+
+
+
+    document.querySelectorAll(".edit-instructor").forEach(button => {
+        button.addEventListener("click", function(){
+
+            const id = this.getAttribute("data-id");
+            window.location.href = `EditInstructor.html?instructor_id=${id}`;
+
+
+        })
+    })
+
+
+
+}
+
+
+
+
+
+
+
+
 
 function seAllShifts(instructor_id){
     console.log("Instructor ID being passed:", instructor_id); // Add this line

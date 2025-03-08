@@ -4,24 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List of All The Instructors</title>
-</head>
-
-<head>
-    <meta charset="UTF-8">
-    <title>List of all the activities</title>
     <style>
-        /* Center content */
+
+        /* Reset default margin & padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Fix: Allow Full Page Scrolling */
         body {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-color: #f0f8ff;
+            min-height: 100vh; /* Changed from `height` to `min-height` */
+            background-color: #f0f8ff; /* Light Blue Background */
             flex-direction: column;
             text-align: center;
             font-family: 'Montserrat', sans-serif;
         }
 
+        /* Main Container */
         .main-content {
             width: 80%;
             max-width: 900px;
@@ -29,118 +33,112 @@
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0px 5px 15px rgba(0, 123, 255, 0.2);
+            margin-bottom: 30px; /* Add some spacing */
         }
 
+        /* Title Styling */
         h1 {
             color: #007bff;
             margin-bottom: 20px;
             font-size: 2.5rem;
         }
 
-        /* Table Styling */
-        .table-container {
-            overflow-x: auto;
-            border-radius: 15px;
-            box-shadow: 0px 5px 15px rgba(0, 123, 255, 0.2);
+        /* Instructors Grid */
+        .instructors-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+            gap: 20px;
+            padding: 20px;
+            justify-content: center;
         }
 
-        .activity-table {
-            width: 100%;
-            border-collapse: collapse;
+        /* Individual Instructor Card */
+        .instructor-item {
             background: white;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .activity-table thead {
-            background: #007bff;
-            color: white;
-            font-weight: bold;
-        }
-
-        .activity-table th, .activity-table td {
             padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 10px rgba(0, 123, 255, 0.2);
             text-align: center;
-            border-bottom: 1px solid #ddd;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border: 3px solid #007bff;
         }
 
-        .activity-table tbody tr:hover {
-            background: rgba(0, 123, 255, 0.1);
+        /* Hover Effect */
+        .instructor-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 8px 20px rgba(0, 123, 255, 0.3);
+            border-color: #0056b3;
         }
 
-        /* Buttons */
-        /* Button Styling */
-        .btn {
-            display: inline-block;
-            width: 100px;
-            height: 40px;
-            line-height: 40px;
-            border-radius: 20px; /* Oval shape */
-            font-size: 1rem;
+        /* Instructor Name */
+        .instructor-item h2 {
+            font-size: 1.5rem;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        /* Instructor Image */
+        .instructor-item img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid #007bff;
+            margin-bottom: 10px;
+        }
+
+        /* Instructor Description */
+        .instructor-item p {
+            font-size: 1.1rem;
             font-weight: bold;
-            text-align: center;
-            text-decoration: none;
-            cursor: pointer;
-            border: none;
-            outline: none;
-            transition: all 0.3s ease-in-out;
-        }
-
-        /* Delete Button */
-        .btn-delete {
-            background-color: white;
-            border: 2px solid #dc3545;
-            color: #dc3545;
-        }
-
-        .btn-delete:hover {
-            background-color: #dc3545;
-            color: white;
+            color: #333;
         }
 
         /* Edit Button */
-        .btn-edit {
-            background-color: white;
-            border: 2px solid #007bff;
-            color: #007bff;
-        }
-
-        .btn-edit:hover {
+        .edit-instructor {
+            display: inline-block;
             background-color: #007bff;
             color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            margin-top: 10px;
         }
 
+        .edit-instructor:hover {
+            background-color: #0056b3;
+        }
+
+        /* Fix: Allow Scrolling if More Instructors Exist */
+        .instructors-container {
+            overflow: auto;
+        }
+
+        /* Responsive: 1 Instructor Per Row on Small Screens */
+        @media (max-width: 600px) {
+            .instructors-container {
+                grid-template-columns: 1fr; /* Switch to 1 column on small screens */
+            }
+        }
 
     </style>
 </head>
 
-
-
-
 <body>
-    <h2>List of All Instructors</h2>
 
-    <div class ="table-container">
-        <table class="activity-table">
-            <thead>
-                <tr>
-                    <th>Instructor's ID</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>E-mail</th>
-                    <th>Phone Number</th>
-                    <th>Shifts</th>
+<div class="main-content">
+    <h1>List of All Instructors</h1>
 
-                </tr>
-            </thead>
-
-            <tbody>
-            </tbody>
-
-        </table>
+    <div class="instructors-container">
+        <!-- Instructors will be dynamically added via JavaScript -->
     </div>
+</div>
 
-    <script src="SeAllInstructors.js"></script>
+<script src="SeAllInstructors.js"></script>
 
 </body>
 </html>
