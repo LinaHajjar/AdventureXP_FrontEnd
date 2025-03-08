@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="header-footer.css">
+  <link rel="stylesheet" href="header.css">
   <style>
 
     /* General Styling */
@@ -142,17 +142,19 @@
       background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
       border-radius: 10px; /* Smooth edges */
       display: inline-block;
-      margin: 30px auto; /* Adds spacing */
+      margin: 120px auto 30px;
     }
 
 
 
   </style>
+  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="footer.css">
   <title>Homepage</title>
 </head>
 <body>
 <!-- Dynamisk indlæsning af navigation og footer -->
-<div id="header-footer"></div>
+<div id="header"></div>
 
 <!-- Hovedindhold, der er specifikt for denne side -->
 <main>
@@ -199,16 +201,22 @@
     </div>
   </section>
 
-
-
 </main>
+<div id="footer"></div>
 
 <script>
-  // Indlæs header og footer
-  fetch('header-footer.html')
+  // Indlæs header
+  fetch('header.html')
           .then(response => response.text())
           .then(data => {
-            document.getElementById('header-footer').innerHTML = data;
+            document.getElementById('header').innerHTML = data;
+          });
+
+  // Indlæs footer
+  fetch('footer.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('footer').innerHTML = data;
           });
 </script>
 </body>
