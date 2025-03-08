@@ -3,41 +3,160 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="header-footer.css">
+  <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="homepage.css">
+  <link rel="stylesheet" href="footer.css">
   <title>Homepage</title>
 </head>
 <body>
-<!-- Dynamisk indlæsning af navigation og footer -->
+<!-- Header indlæses øverst -->
+<div id="header"></div>
 
-<div id="header-footer"></div>
+<main>
+  <!-- Hero-sektionen med fast højde og absolut placeret overlay -->
+  <section class="hero">
+    <div class="content-overlay">
+      <h1>Welcome to AdventureXP</h1>
+      <p>Discover our many experiences,<br>and book your next adventure here!</p>
+      <a href="../booking/Reservation.html" class="btn">Book</a>
+    </div>
+  </section>
 
-<main class="blurred-background">
-  <div class="content-overlay">
-    <h1>Welcome to AdventureXP</h1>
-    <p>Become more familiar with AdventureXP's many experiences, <br> and book your next adventure here.</p>
-    <a href="../booking/Reservation.html">
-      <button class="btn button">Book</button>
-    </a>
+  <!-- Almindeligt sideindhold efter hero-sektionen -->
+  <!-- Cards Container -->
+  <h1>Activities</h1>
+  <h3>At AdventureXP, we bring you the most exciting and thrilling experiences, perfect for adventure seekers of all ages! Whether you’re looking for heart-pounding action, competitive fun, or a relaxed activity to enjoy with friends and family, we’ve got something for everyone.
+    <br>Here’s a sneak peek at the amazing activities we offer:</h3>
+  <!-- Aktivitet Cards -->
+  <section class="activity-cards">
+    <div class="card" data-activity="1">
+      <img src="https://ballerupbowling.dk/wp-content/uploads/2019/06/header_28_ballerupgokart_d.v20150707122503.jpg" alt="go Kart">
+      <h3>Go Kart</h3>
+      <button class="more-info-btn">More Info</button>
+    </div>
+    <div class="card" data-activity="2">
+      <img src="https://media.smartbox.com/pim/1000003019179890433282.jpg?thumbor=400x0" alt="Paintball">
+      <h3>Paintball</h3>
+      <button class="more-info-btn">More Info</button>
+    </div>
+    <div class="card" data-activity="3">
+      <img src="https://cecilies.dk/app/uploads/2024/10/DSC05755-scaled-e1728557639221.jpg" alt="Mini Golf">
+      <h3>Mini Golf</h3>
+      <button class="more-info-btn">More Info</button>
+    </div>
+    <div class="card" data-activity="4">
+      <img src="https://tuplakasi-action.fi/wp-content/uploads/2019/03/Sumokuva.jpg" alt="Sumo Wrestling">
+      <h3>Sumo Wrestling</h3>
+      <button class="more-info-btn">More Info</button>
+    </div>
+  </section>
 
+  <!-- Modal Popup -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="modal-details">
+        <!-- Aktivitetsdetaljer indsættes her -->
+      </div>
+    </div>
   </div>
 
-  <!--<section class="Activities">
-    <div class="Activities-text">
-      <h2>Activities at AdventureXP</h2>
-      <p>At AdventureXP, we offer a wide range of thrilling and adventurous ActivityManage designed for all ages and levels of experience.<br>
-        Whether you're looking for a peaceful escape into nature, an adrenaline-packed challenge,<br>
-        or a fun activity to enjoy with friends and family,we have something for everyone.</p>
-    </div>
-  </section> -->
-
-</main>
+  <!-- Footer indlæses dynamisk -->
+<div id="footer"></div>
 
 <script>
-  // Indlæs header og footer
-  fetch('header-footer.html')
+  document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('modal');
+    const modalDetails = document.getElementById('modal-details');
+
+    const closeButton = document.querySelector('.close');
+
+    // Data for de 4 aktiviteter med baggrundsbilleder
+    const activityData = {
+      1: {
+        title: "Go Kart",
+        description: "Drive around with your friends and family and have an enjoyable day with racing and the wind rushing through you. <br>" +
+                "Experience the exhilaration of high-speed racing on our professionally designed go-kart track. Every twist and turn is crafted to deliver that perfect adrenaline rush, making you feel like a true champion behind the wheel. Whether you’re tearing around the circuit with family or challenging your friends to a thrilling race, each lap offers a mix of competitive spirit and pure joy. The sound of roaring engines, the rush of wind, and the vibrant atmosphere all come together to create an unforgettable day on the track." +
+                "<br>Age requirement: 12 years" +
+                "<br>Height requirement: 150 cm!",
+        bgImage: "https://ballerupeventcenter.dk/wp-content/uploads/2021/03/kasse-soelvpakken.jpg"  // URL til baggrundsbilledet for aktivitet 1
+      },
+      2: {
+        title: "Paintball",
+        description: "Exciting and strategic team game where you test your skills in a thrilling battle.Step into the heart of a dynamic battle with our immersive paintball arena. <br>" +
+                "This isn’t just a game—it’s a full-on tactical adventure where strategy meets high-energy fun. Equip yourself with the latest gear, join forces with teammates, and navigate a challenging outdoor battlefield that demands both quick reflexes and smart tactics. The vibrant splashes of color that mark each victory add to the excitement, making every match a memorable experience. Whether you’re a seasoned player or a first-timer looking for a burst of adrenaline, paintball promises a day full of excitement and strategic play." +
+                "<br>Age requirement: 14 years" +
+                "<br>Height requirement: 160 cm",
+        bgImage: "https://assets.simpleviewcms.com/simpleview/image/fetch/c_fill,h_1080,w_1920/f_jpg/q_65/https://media.newmindmedia.com/TellUs/image/%3Ffile%3DOlympiaparken_paintball_foto_daniel_nrodby-263_1335521767.jpg&dh%3D800&dw%3D1200&t%3D4"
+      },
+      3: {
+        title: "Mini Golf",
+        description: "Fun and relaxing outdoor activity suitable for all ages. Perfect for families and friends<br>" +
+                ".Immerse yourself in a charming and playful world with our beautifully designed mini golf course. Perfect for all ages, each hole is a delightful blend of whimsical obstacles and creative landscaping that invites both relaxation and light-hearted competition. Whether you’re enjoying a leisurely game with family or engaging in a friendly challenge with friends, mini golf is all about creating joyful memories in a stress-free setting. The vibrant course design and cheerful ambiance make it the perfect retreat for a day of laughter, connection, and fun." +
+                "<br>Age requirement: None" +
+                "<br>Height requirement: None",
+        bgImage: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/42/71/e5/minigolf.jpg?w=500&h=500&s=1"
+      },
+      4: {
+        title: "Sumo Wrestling",
+        description: "Hilarious and competitive activity where you put on a giant sumo suit and try to push your opponent out of the ring!" +
+                "<br>Unleash your inner competitor with our hilarious and heart-pounding sumo wrestling experience! Slip into a giant inflatable sumo suit and step into the ring for a friendly bout that’s all about fun, laughter, and a bit of competitive spirit. In this unique challenge, it’s not about brute strength—it’s about balance, strategy, and a willingness to embrace the absurd. Whether you’re aiming to impress your friends or just looking to share some laughter, every match offers an unforgettable mix of playful competition and camaraderie." +
+                "<br>Age requirement: 10" +
+                "<br>Height requirement: 140 cm.",
+        bgImage: "https://www.atozpartyrental.net/wp-content/uploads/2013/09/sumo-wrestling-suits.jpg"
+      }
+    };
+
+    // Tilføj event listener til hver "More Info"-knap
+    document.querySelectorAll('.more-info-btn').forEach(button => {
+      button.addEventListener('click', function() {
+        const card = this.closest('.card');
+        const activityId = card.getAttribute('data-activity');
+        const data = activityData[activityId];
+
+        // Opret modal indhold med baggrundsbillede og tekst
+        modalDetails.innerHTML = `
+        <div class="modal-bg" style="background-image: url('${data.bgImage}');">
+          <div class="modal-text">
+            <h2>${data.title}</h2>
+            <p>${data.description}</p>
+          </div>
+        </div>
+      `;
+
+        // Vis modalvinduet
+        modal.style.display = 'block';
+      });
+    });
+
+    // Luk modalvinduet ved klik på krydset
+    closeButton.addEventListener('click', function() {
+      modal.style.display = 'none';
+    });
+
+    // Luk modal, hvis brugeren klikker uden for modal-indholdet
+    window.addEventListener('click', function(event) {
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    });
+  });
+</script>
+
+
+  <script>
+  // Indlæs header
+  fetch('header.html')
           .then(response => response.text())
           .then(data => {
-            document.getElementById('header-footer').innerHTML = data;
+            document.getElementById('header').innerHTML = data;
+          });
+
+  // Indlæs footer
+  fetch('footer.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('footer').innerHTML = data;
           });
 </script>
 </body>

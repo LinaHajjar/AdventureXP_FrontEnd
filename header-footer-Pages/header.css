@@ -71,29 +71,3 @@ header nav .button {
     border: none;
     border-radius: 20px;
 }
-/* Footer */
-footer {
-    background-color: #4a9dbf; /* Dark Green */
-    color: white;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-around;
-}
-footer .footer-section {
-    text-align: center;
-}
-footer h3 {
-    margin-bottom: 10px;
-}
-/* Main content area */
-main {
-    margin-top: 120px;  /* Space for the fixed header */
-    margin-bottom: 120px;  /* Space for the fixed footer */
-    padding: 20px;
-    box-sizing: border-box;
-}
