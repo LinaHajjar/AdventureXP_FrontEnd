@@ -13,11 +13,14 @@ function fetchActivities(){
         });
 }
 
+
+
+//this function displayActivities is written inside the function fetchActivities
+//in the seAllInstructors.js class
+
 function displayActivities(activities) {
     const tbody = document.querySelector(".activity-table tbody");
     tbody.innerHTML = ""; // Rydder tabellen, så den ikke gentages ved reload
-
-
     activities.forEach(activities => {
         const row = document.createElement("tr");
 
