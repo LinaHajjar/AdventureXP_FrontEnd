@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Candy</title>
+    <style>
+        /* General Page Styling */
+        /* General Body Styling */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f8ff; /* Light Blue Background */
+            flex-direction: column;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+        }
+
+        /* Main Container */
+        .main-content {
+            width: 80%;
+            max-width: 900px;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 123, 255, 0.2);
+        }
+
+        /* Title Styling */
+        h1 {
+            color: #007bff;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+
+        /* Candy Container */
+        .all-candies {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Individual Candy Item */
+        .candy-item {
+            background: white;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 10px rgba(0, 123, 255, 0.2);
+            text-align: center;
+            width: 200px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border: 3px solid #007bff;
+        }
+
+        /* Hover Effect */
+        .candy-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 8px 20px rgba(0, 123, 255, 0.3);
+            border-color: #0056b3;
+        }
+
+        /* Candy Name */
+        .candy-item h2 {
+            font-size: 1.5rem;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        /* Price */
+        .candy-item p {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Input Field for Price Editing */
+        .edit-price {
+            width: 100%;
+            padding: 5px;
+            font-size: 1rem;
+            text-align: center;
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            display: none;
+        }
+
+        /* Button Styling */
+        button {
+            padding: 8px 15px;
+            font-size: 1rem;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: 0.3s ease-in-out;
+        }
+
+        /* Edit Button */
+        .edit-btn {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .edit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Save Button */
+        .save-btn {
+            background-color: #28a745;
+            color: white;
+            display: none;
+        }
+
+        .save-btn:hover {
+            background-color: #1e7e34;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<h1>All Candies</h1>
+
+<div class="all-candies">
+
+
+
+</div>
+
+
+
+<script src="Candy.js"></script>
+</body>
+</html>
