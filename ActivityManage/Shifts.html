@@ -3,139 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>List of the Instructor's Shifts</title>
+  <link rel="stylesheet" href="myCSS.css">
+  <script defer src="shifts.js"></script> <!--'defer' : ensure script loads after DOM -->
+  <title>Trainer Shifts</title>
+
 </head>
-
-<head>
-  <meta charset="UTF-8">
-  <title>List of all the activities</title>
-  <style>
-    /* Center content */
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #f0f8ff;
-      flex-direction: column;
-      text-align: center;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    .main-content {
-      width: 80%;
-      max-width: 900px;
-      background: white;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0px 5px 15px rgba(0, 123, 255, 0.2);
-    }
-
-    h1 {
-      color: #007bff;
-      margin-bottom: 20px;
-      font-size: 2.5rem;
-    }
-
-    /* Table Styling */
-    .table-container {
-      overflow-x: auto;
-      border-radius: 15px;
-      box-shadow: 0px 5px 15px rgba(0, 123, 255, 0.2);
-    }
-
-    .activity-table {
-      width: 100%;
-      border-collapse: collapse;
-      background: white;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .activity-table thead {
-      background: #007bff;
-      color: white;
-      font-weight: bold;
-    }
-
-    .activity-table th, .activity-table td {
-      padding: 15px;
-      text-align: center;
-      border-bottom: 1px solid #ddd;
-    }
-
-    .activity-table tbody tr:hover {
-      background: rgba(0, 123, 255, 0.1);
-    }
-
-    /* Buttons */
-    /* Button Styling */
-    .btn {
-      display: inline-block;
-      width: 100px;
-      height: 40px;
-      line-height: 40px;
-      border-radius: 20px; /* Oval shape */
-      font-size: 1rem;
-      font-weight: bold;
-      text-align: center;
-      text-decoration: none;
-      cursor: pointer;
-      border: none;
-      outline: none;
-      transition: all 0.3s ease-in-out;
-    }
-
-    /* Delete Button */
-    .btn-delete {
-      background-color: white;
-      border: 2px solid #dc3545;
-      color: #dc3545;
-    }
-
-    .btn-delete:hover {
-      background-color: #dc3545;
-      color: white;
-    }
-
-    /* Edit Button */
-    .btn-edit {
-      background-color: white;
-      border: 2px solid #007bff;
-      color: #007bff;
-    }
-
-    .btn-edit:hover {
-      background-color: #007bff;
-      color: white;
-    }
-
-
-  </style>
-</head>
-
 
 <body>
-  <h2>Instructor's Shifts</h2>
+  <h2> Select an  Instructor</h2>
+  <select id="selectInstructor" onchange="fetchShifts()">
+    <option value="">-----Select an Instructor-----</option>
+  </select>
 
-  <div class ="table-container">
-    <table class="activity-table">
-      <thead>
-      <tr>
-        <th>Shift ID</th>
-        <th>Name of the Activity</th>
-        <th>Date</th>
+  <h2>Assigned Shifts</h2>
+  <div id="shiftsContainer"></div>
 
-      </tr>
-      </thead>
-
-      <tbody id="shift-table-body">
-      </tbody>
-
-    </table>
-  </div>
-
-  <script src="Shifts.js"></script>
 
 </body>
 </html>
