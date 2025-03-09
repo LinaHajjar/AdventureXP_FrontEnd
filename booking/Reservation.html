@@ -15,17 +15,28 @@ Fejl
             <input type="date" id="bookingDate" name="bookingDate" required>
         </div>
 
-
-
-        <div class="form-group"> <label for="activity">Choose Activity: </label>
-            <select id="activity" name="Activity" required>
+        <!-- Activity selection med dynamisk hentning -->
+        <div class="form-group">
+            <label for="activity">Choose Activity:</label>
+            <select id="activity" name="activity" required>
                 <option value="">--- Select an activity from the List ---</option>
-                <option value="Gokart">Go Kart</option>
-                <option value="Paintball">Paintball</option>
-                <option value="Minigolf">Mini Golf</option>
-                <option value="Sumo Wrestling">Sumo Wrestling</option>
             </select>
         </div>
+
+        <script>
+            fetch("http://localhost:8080/activities/all")
+                .then(response => response.json())
+                .then(activities => {
+                    const activitySelect = document.getElementById("activity");
+                    activities.forEach(activity => {
+                        const option = document.createElement("option");
+                        option.value = activity.name;
+                        option.textContent = `${activity.name} - ${activity.price} DKK`;
+                        activitySelect.appendChild(option);
+                    });
+                })
+                .catch(error => console.error("Fejl ved hentning af aktiviteter:", error));
+        </script>
 
         <div class="form-group"> <label for="bookingTime">Choose the Time: </label>
             <select id="bookingTime" name="bookingTime" required>
@@ -50,7 +61,7 @@ Fejl
                 }
             }
 
-            generateTimeSlots(10, 19, 30);//generate time options from 08:00 to 17:00 with 30-min intervals
+            generateTimeSlots(10, 19, 30);//generate time options from 08:00 to 17:00 with 30-min intervals numberParticipants
         </script>
 
 
@@ -62,8 +73,8 @@ Fejl
             <input type="text" id="lastName" name="lastName" required>
         </div>
 
-        <div class="form-group"><label for="numberParticipants">Number of Participants:</label>
-            <input type="number" id="numberParticipants" name="numberParticipants" min="1" required>
+        <div class="form-group"><label for="numberOfGuests">Number of Participants:</label>
+            <input type="number" id="numberOfGuests" name="numberOfGuests" min="1" required>
         </div>
 
         <div class="form-group"><label for="email">Email:</label>
@@ -73,6 +84,28 @@ Fejl
         <div class="form-group"><label for="phone">Phone:</label>
             <input type="tel" id="phone" name="phone" required>
         </div>
+
+        <div class="form-group">
+            <label for="candy">Choose Candy or snacks (Optionel):</label>
+            <select id="candy" name="candy">
+                <option value="">No Candy or snacks</option>
+            </select>
+        </div>
+
+        <script>
+            fetch("http://localhost:8080/candy/all")
+                .then(response => response.json())
+                .then(candies => {
+                    const candySelect = document.getElementById("candy");
+                    candies.forEach(candy => {
+                        const option = document.createElement("option");
+                        option.value = candy.name;
+                        option.textContent = `${candy.name} - ${candy.price} DKK`;
+                        candySelect.appendChild(option);
+                    });
+                })
+                .catch(error => console.error("Fejl ved hentning af slik:", error));
+        </script>
 
         <div class="button-container">
             <button type="submit" id="submit">Book Now</button>
