@@ -20,17 +20,18 @@ function displayBookings(bookings) {
 
     bookings.forEach(booking => {
         const row = document.createElement("tr");
+        const decodedPhone = decodeURIComponent(booking.phone);
 
         row.innerHTML = `
         <td>${booking.bookingId}</td>
-        <td>${booking.phone}</td>
+        <td>${decodedPhone}</td>
         <td>${booking.firstName}</td>
         <td>${booking.lastName}</td>
         <td>${booking.email}</td>
         <td>${booking.bookingDate}</td>
         <td>${booking.bookingTime}</td>
         <td>${booking.activity.name}</td> 
-        <td>${booking.numberofGuests}</td>
+        <td>${booking.numberOfGuests}</td>
         <td>${booking.candy ? booking.candy.name : "N/A"}</td> <!--handle possible null values i candies: in case of the person did not book any candy-->
                 
         <td> <button class="btn btn-delete" onclick="removeBooking('${booking.phone}')">Delete</button></td>
