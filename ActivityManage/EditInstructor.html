@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../myCSS.css">
+
+
     <title>Edit Instructor</title>
 
     <style>
@@ -141,7 +144,13 @@
 
     </style>
 </head>
+
 <body>
+
+<!-- back button -->
+<div class="back-button-container">
+    <button onclick="goBack()" class="back-button">← Back</button>
+</div>
 
 <div class="main-content">
     <h1>Edit Instructor</h1>
@@ -171,6 +180,12 @@
 </div>
 
 <script src="EditInstructor.js"></script>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
 
 </body>
 </html>

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../myCSS.css">
     <title>List of All The Instructors</title>
     <style>
 
@@ -130,6 +131,11 @@
 
 <body>
 
+<!-- back button -->
+<div class="back-button-container">
+    <button onclick="goBack()" class="back-button">← Back</button>
+</div>
+
 <div class="main-content">
     <h1>List of All Instructors</h1>
 
@@ -139,6 +145,11 @@
 </div>
 
 <script src="SeAllInstructors.js"></script>
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
 
 </body>
 </html>
