@@ -54,7 +54,7 @@
         /* Input fields */
         input {
             width: 100%;
-            padding: 10px;
+            padding: 10px 150px; /* 10px top/bottom, 20px left/right */
             border: 2px solid #007bff;
             border-radius: 5px;
             font-size: 1rem;
@@ -66,10 +66,17 @@
             text-align: center;
         }
 
+        /* Button container */
+        .button-container {
+            text-align: center;
+            width: 100%; /* Ensure it takes full width */
+            display: flex;
+            justify-content: center; /* Center the button */
+        }
+
         /* Button styling */
         button {
-            width: 100%;
-            padding: 12px;
+            padding: 12px 25px; /* Add some horizontal padding */
             border-radius: 25px;
             font-size: 1rem;
             font-weight: bold;
@@ -79,6 +86,10 @@
             background-color: #007bff;
             color: white;
             transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #0056b3;
         }
 
         button:hover {
@@ -107,13 +118,21 @@
             <input type="text" id="description" name="description" required>
         </div>
 
+
+
+        <!--wrapping the price and duration input fields with <span> elements to create containers for the input and the unit labels.-->
         <div class="form-group"><label for="price">Price:</label>
-            <input type="number" id="price" name="price" min="0" required>
+                <input type="number" id="price" name="price" min="0" placeholder="0 Kr"/>
         </div>
 
+
         <div class="form-group"><label for="duration">Duration of the session (in minutes):</label>
-            <input type="number" id="duration" name="duration" required>
+                <input type="number" id="duration" name="duration" placeholder="0 min">
+                <span id="durationUnit"></span>
         </div>
+
+
+
 
         <div class="button-container">
             <button type="submit" id="submit">Add The new Activity</button>

@@ -2,9 +2,9 @@ document.getElementById("bookingForm").addEventListener("submit", function(event
     event.preventDefault();
 
     const name = document.getElementById("name").value;
-        const description = document.getElementById("description").value;
-        const price = document.getElementById("price").value;
-        const duration = document.getElementById("duration").value;
+    const description = document.getElementById("description").value;
+    const price = document.getElementById("price").value;
+    const duration = document.getElementById("duration").value;
 
         //Validate that all the inf are given
         if (!name || !description || !price || !duration) {
@@ -21,7 +21,8 @@ document.getElementById("bookingForm").addEventListener("submit", function(event
             name: name,
         };
 
-        fetch("http://localhost:8080/activities/activity", {
+    // Send POST request
+    fetch("http://localhost:8080/activities/activity", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
