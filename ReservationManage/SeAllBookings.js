@@ -32,7 +32,7 @@ function displayBookings(bookings) {
         <td>${booking.bookingTime}</td>
         <td>${booking.activity.name}</td> 
         <td>${booking.numberOfGuests}</td>
-        <td>${booking.candy ? booking.candy.name : "N/A"}</td> <!--handle possible null values i candies: in case of the person did not book any candy-->
+        <td>${booking.candy && booking.candy.candyId ? booking.candy.name : "No Candy Selected"}</td>
                 
         <td> <button class="btn btn-delete" onclick="removeBooking('${booking.phone}')">Delete</button></td>
         <td><button class="btn btn-edit" onclick="redirectToEditPage('${booking.phone}')">Edit</button></td>

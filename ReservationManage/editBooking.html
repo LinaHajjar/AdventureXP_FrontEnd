@@ -1,3 +1,65 @@
+
+<style>
+form#editBookingForm {
+max-width: 400px;
+margin: 20px auto;
+padding: 20px;
+background: #f9f9f9;
+border-radius: 10px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+display: flex;
+flex-direction: column;
+gap: 12px;
+}
+
+form#editBookingForm label {
+font-weight: bold;
+margin-bottom: 5px;
+}
+
+form#editBookingForm input,
+form#editBookingForm select {
+width: 100%;
+padding: 8px;
+font-size: 16px;
+border: 1px solid #ccc;
+border-radius: 5px;
+transition: 0.3s;
+}
+
+form#editBookingForm input:focus,
+form#editBookingForm select:focus {
+border-color: #007bff;
+outline: none;
+box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+form#editBookingForm select {
+background: white;
+cursor: pointer;
+}
+
+form#editBookingForm button {
+background: #007bff;
+color: white;
+padding: 10px;
+font-size: 16px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: 0.3s;
+}
+
+form#editBookingForm button:hover {
+background: #0056b3;
+}
+
+</style>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,12 +94,19 @@
   <label for="activity">Activity:</label>
   <input type="text" id="activity" name="activity" autocomplete="off">
 
-  <label for="candy"></label><select id="candy" name="candy">
-    <option value="0" disabled selected>Select a candy</option>
-    <option value="1">Candy 1 - $2.99</option>
-    <option value="2">Candy 2 - $3.99</option>
-    <option value="3">Candy 3 - $1.99</option>
+  <!-- Candy dropdown: Each option's value is the candy name and we store price in a data attribute -->
+  <label for="candy">Candy:</label>
+  <select id="candy" name="candyName">
+    <option value="" disabled selected>Select a candy</option>
+    <option value="Candyfloss" data-price="14.99">Candyfloss - DKK 14.99</option>
+    <option value="Dubai" data-price="59.99">Dubai - DKK 59.99</option>
+    <option value="Mixed candy bag 100g" data-price="15.99">Mixed candy bag 100g - DKK 15.99</option>
+    <option value="Popcorn" data-price="29.99">Popcorn - DKK 29.99</option>
+    <option value="Soda" data-price="15.99">Soda - DKK 15.99</option>
   </select>
+
+  <!-- Hidden input to store candy price -->
+  <input type="hidden" id="candyPrice" name="candyPrice" value="">
 
 
   <label for="numberOfGuests">Number of Guests:</label>

@@ -1,15 +1,6 @@
 function searchBooking() {
-    const phone = document.getElementById("phone").value;  // Get the phone value from the input
+    const phone = document.getElementById("phone").value;
 
-    let bookingElement = document.getElementById("bookingDetails");
-
-    if (!bookingElement) {
-        bookingElement = document.createElement("div");
-        bookingElement.id = "bookingDetails";
-        document.body.appendChild(bookingElement);
-    }
-
-    // Corrected URL to use phone in the path
     fetch(`http://localhost:8080/bookings/editBooking/${phone}`, {
         method: "GET",
         headers: {
@@ -25,23 +16,14 @@ function searchBooking() {
         .then(data => {
             console.log("Booking successfully found", data);
 
-            const bookinghtml = `
-            <h2>Booking Details</h2>
-            <p><strong>Booking Id: </strong> ${data.bookingId || 'not available'}</p>
-            <p><strong>First Name: </strong> ${data.firstName || 'not available'} </p>
-            <p><strong>Last Name: </strong> ${data.lastName || 'not available'}</p>
-            <p><strong>Email: </strong> ${data.email || 'not available'}</p>
-            <p><strong>Phone: </strong> ${data.phone || 'not available'}</p>
-            <p><strong>Activity: </strong> ${data.activity ? data.activity.name : 'not available'}</p>
-            <p><strong>Number of Guests: </strong> ${data.numberOfGuests || 'not available'}</p>
-            <p><strong>Booking Date: </strong> ${data.bookingDate || 'not available'}</p>
-            <p><strong>Booking Time: </strong> ${data.bookingTime || 'not available'}</p>
-        `;
+            // Store the booking details in localStorage
+            localStorage.setItem("bookingData", JSON.stringify(data));
 
-            bookingElement.innerHTML = bookinghtml;
+            // Open new page to display booking details
+            window.location.href = `searchBookingInfo.html?phone=${phone}`;
         })
         .catch(error => {
             console.error("Error:", error);
+            alert("Booking not found!");
         });
 }
-
