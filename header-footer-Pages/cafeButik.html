@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="header.css">
   <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="cafeButik.css">
   <title>Homepage</title>
 </head>
 <body>
@@ -15,28 +16,69 @@
 <!-- Note: Alt kode for "Cafe and shop" skal stå i mellem <main> tags herunder da det er en statisk  header og footer -->
 <main>
   <h1>Cafe and shop</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
-  <h1>Test</h1>
+  <!-- Merchandise Section -->
+  <div class="merchandise-box">
+  <section class="merchandise-section">
+    <h2>Merchandise</h2>
+    <p style="font-size: 1.2rem; color: #007bff; font-weight: bold; margin-bottom: 10px; text-transform: uppercase; text-align: center;">
+      Available for purchase at AdventureXP
+    </p>
+    <p>Browse our exclusive merchandise – swipe to see the next item</p>
+    <div class="merchandise-wrapper">
+      <button class="scroll-button left-button">&larr;</button>
+      <div class="merchandise-container">
+        <!-- Merchandise items – hver fylder 100% af slideren -->
+        <div class="merchandise-item">
+          <img src="shirts/shirt1.webp" alt="T-shirt">
+          <h3>T-shirt</h3>
+          <p>150 kr.</p>
+        </div>
+        <div class="merchandise-item">
+          <img src="shirts/shirt2.webp" alt="Cap">
+          <h3>T-shirt</h3>
+          <p>150 kr.</p>
+        </div>
+        <div class="merchandise-item">
+          <img src="shirts/shirt3.webp" alt="Mug">
+          <h3>T-shirt</h3>
+          <p>150 kr.</p>
+        </div>
+        <div class="merchandise-item">
+          <img src="shirts/shirt4.webp" alt="Keychain">
+          <h3>T-shirt</h3>
+          <p>150 kr.</p>
+        </div>
+        <div class="merchandise-item">
+          <img src="shirts/shirt5.webp" alt="Keychain">
+          <h3>Long sleeve shirt</h3>
+          <p>200 kr.</p>
+        </div>
+        <!-- Tilføj flere items efter behov -->
+      </div>
+      <button class="scroll-button right-button">&rarr;</button>
+    </div>
+  </section>
+  </div>
+
+  <!-- Cafe Info Section -->
+  <section class="cafe-info">
+    <h2>About Our Cafe</h2>
+    <div class="cafe-details">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwWZkyykiV3iJVSLLHEyALI_5LtU92jUSDxA&s" alt="Cafe Interior">
+      <div class="cafe-description">
+        <p>
+          Welcome to AdventureXP Cafe – your modern oasis in the heart of the adventure park. Step into a stylish, contemporary space where the aroma of freshly brewed coffee mingles with the scent of artisan pastries.
+        </p>
+        <p>
+          Our menu features an array of gourmet coffees, premium teas, and delicious snacks made from locally sourced ingredients. Enjoy our signature sandwiches, salads, and desserts in a bright, airy setting designed for both relaxation and socializing.
+        </p>
+        <p>
+          Whether you’re taking a break between adventures or simply enjoying a quiet moment, our friendly staff and inviting ambiance promise a memorable experience. Come and savor the unique blend of flavor and style at AdventureXP Cafe!
+        </p>
+      </div>
+    </div>
+  </section>
+
 </main>
 <div id="footer"></div>
 <!-- Note: Alt kode for "Cafe and shop" skal stå i mellem <main> tags ovenfor da det er en statisk  header og footer -->
@@ -56,6 +98,28 @@
           .then(data => {
             document.getElementById('footer').innerHTML = data;
           });
+
+  // JavaScript for scrolling the merchandise slider
+  const leftButton = document.querySelector('.left-button');
+  const rightButton = document.querySelector('.right-button');
+  const merchandiseContainer = document.querySelector('.merchandise-container');
+
+  // Scroll distance: 100% af wrapperens bredde
+  const scrollAmount = document.querySelector('.merchandise-wrapper').offsetWidth;
+
+  leftButton.addEventListener('click', () => {
+    merchandiseContainer.scrollBy({
+      left: -scrollAmount,
+      behavior: 'smooth'
+    });
+  });
+
+  rightButton.addEventListener('click', () => {
+    merchandiseContainer.scrollBy({
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
+  });
 </script>
 </body>
 </html>

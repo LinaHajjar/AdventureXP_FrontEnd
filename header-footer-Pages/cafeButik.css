@@ -1,0 +1,168 @@
+/* Merchandise Section */
+body {
+    background-image: url('adventure-park.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.merchandise-box {
+    padding: 5px;                 /* Indvendig margin */
+    /*background-color: #fff;        /* Hvid baggrund */
+    margin: 20px auto;             /* Centerer boksen med margin på toppen og bunden */
+    max-width: 1200px;             /* Maksimal bredde */
+}
+.merchandise-section {
+    margin: 40px auto;
+    width: 80%;
+    max-width: 900px;
+    background: #fff;
+    padding: 15px 0;
+    border: 5px solid #ffcc00;  /* Gul kant */
+    border-radius: 20px;         /* Runde hjørner */
+}
+
+.merchandise-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+.merchandise-section p {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+/* Wrapper til slideren – fylder nu 50% af viewportens højde */
+.merchandise-wrapper {
+    position: relative;
+    width: 100%;
+    height: 50vh; /* Halvdelen af siden */
+    overflow: hidden;
+}
+
+/* Container til slideren */
+.merchandise-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+/* Hvert merchandise-item fylder 100% af wrapperens bredde og højde */
+.merchandise-item {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #fff;
+    color: #333;
+}
+
+.merchandise-item img {
+    max-width: 100%;
+    max-height: 60%;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.merchandise-item h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.merchandise-item p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007bff;
+    margin-top: -10px;
+}
+
+/* Scroll knapper – designet til at være synlige og centralt placeret */
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
+    color: #fff;
+    font-size: 3rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.3s;
+}
+
+.scroll-button:hover {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.left-button {
+    left: 280px;
+    margin-top: -60px;
+}
+
+.right-button {
+    right: 280px;
+    margin-top: -60px;
+}
+.merchandise-container {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.merchandise-container::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+}
+/* Cafe Info Section */
+.cafe-info {
+    margin: 60px auto;
+    width: 90%;
+    max-width: 1200px;
+    background: #fff;
+    padding: 60px 40px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    border-radius: 10px;
+}
+
+.cafe-info h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.cafe-details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.cafe-details img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.cafe-description {
+    max-width: 600px;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.cafe-description p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}

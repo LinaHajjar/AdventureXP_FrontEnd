@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../myCSS.css">
+
     <title>Add A New Activity</title>
     <style>
         /* Center everything */
@@ -54,11 +56,23 @@
         /* Input fields */
         input {
             width: 100%;
-            padding: 10px;
+            padding: 10px 12px; /* 10px top/bottom, 20px left/right */
             border: 2px solid #007bff;
             border-radius: 5px;
             font-size: 1rem;
             outline: none;
+        }
+
+        /* Textarea for description felt*/
+        textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            font-size: 1rem;
+            outline: none;
+            height: 150px; /* Set a higher height for the description field */
+            resize: vertical; /* Allow resizing vertically */
         }
 
         /* Button container */
@@ -66,10 +80,17 @@
             text-align: center;
         }
 
+        /* Button container */
+        .button-container {
+            text-align: center;
+            width: 100%; /* Ensure it takes full width */
+            display: flex;
+            justify-content: center; /* Center the button */
+        }
+
         /* Button styling */
         button {
-            width: 100%;
-            padding: 12px;
+            padding: 12px 25px; /* Add some horizontal padding */
             border-radius: 25px;
             font-size: 1rem;
             font-weight: bold;
@@ -85,6 +106,10 @@
             background-color: #0056b3;
         }
 
+        button:hover {
+            background-color: #0056b3;
+        }
+
         /* Message text */
         #message {
             color: green;
@@ -94,7 +119,15 @@
 
     </style>
 </head>
+
+
 <body>
+
+<!-- back button -->
+    <div class="back-button-container">
+        <button onclick="goBack()" class="back-button">← Back</button>
+    </div>
+
     <h1> Add a new activity</h1>
 
     <form id="bookingForm">
@@ -103,17 +136,23 @@
             <input type="text" id="name" name="name" required>
         </div>
 
+
+        <!--make description felt to textarea insted of input so the felt is taller and can contain more text-->
         <div class="form-group"><label for="description">Description and Requirements:</label>
-            <input type="text" id="description" name="description" required>
+            <textarea type="text" id="description" name="description" required></textarea>
         </div>
 
         <div class="form-group"><label for="price">Price:</label>
-            <input type="number" id="price" name="price" min="0" required>
+                <input type="number" id="price" name="price" min="0" required>
         </div>
 
+
         <div class="form-group"><label for="duration">Duration of the session (in minutes):</label>
-            <input type="number" id="duration" name="duration" required>
+                <input type="number" id="duration" name="duration" required>
         </div>
+
+
+
 
         <div class="button-container">
             <button type="submit" id="submit">Add The new Activity</button>
@@ -123,6 +162,12 @@
     <p id="message" style="color: green; font-weight: bold;"></p>
 
     <script src="SubmitActivity.js"></script>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 
 </body>
 </html>

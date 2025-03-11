@@ -65,14 +65,17 @@ background: #0056b3;
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <link rel="stylesheet" href="../myCSS.css">
   <script src="editBooking.js"></script>
   <title>Edit Booking</title>
 </head>
 
 <body>
 
-
+<!-- back button -->
+<div class="back-button-container">
+  <button onclick="goBack()" class="back-button">← Back</button>
+</div>
 
 
 <form id="editBookingForm"  autocomplete="on" onsubmit="event.preventDefault(); updatedBooking();">
@@ -123,6 +126,11 @@ background: #0056b3;
 <br>
 <button onclick="window.location.href='HomeBooking.html'">Cancel</button>
 
+<script>
+  function goBack() {
+    window.history.back();
+  }
+</script>
 
 </body>
 </html>

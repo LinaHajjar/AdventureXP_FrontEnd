@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../myCSS.css">
+
     <title>Add Candy</title>
     <style>
         /* Center everything */
@@ -94,7 +97,16 @@
 
     </style>
 </head>
+
+
 <body>
+
+<!-- back button -->
+<div class="back-button-container">
+    <button onclick="goBack()" class="back-button">← Back</button>
+</div>
+
+
 <h1>Add New Candy</h1>
 <form id="addCandyForm">
     <div>
@@ -110,5 +122,11 @@
 <p id="message"></p>
 
 <script src="AddCandy.js"></script>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 </body>
 </html>

@@ -25,10 +25,18 @@ color: #333;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../myCSS.css">
+
+
     <title>Delete Booking</title>
     <link rel="stylesheet" href="/myCSS.css">
 </head>
 <body>
+
+<!-- back button -->
+<div class="back-button-container">
+    <button onclick="goBack()" class="back-button">← Back</button>
+</div>
 
 <div class = "deleteContainer">
 <h2>Delete Booking</h2>
@@ -43,7 +51,11 @@ color: #333;
 
 
 </div>
-
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
 </body>
 
 <script src = "deleteBooking.js"></script>

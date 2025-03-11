@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../myCSS.css">
     <title>List of all the Reservations</title>
     <style>
         /* Center content */
@@ -107,7 +109,14 @@
 
     </style>
 </head>
+
 <body>
+
+<!-- back button -->
+<div class="back-button-container">
+    <button onclick="goBack()" class="back-button">← Back</button>
+</div>
+
 
 <div class="main-content">
 
@@ -165,6 +174,12 @@
 <script src ="editBooking.js"></script>
 <script src ="searchBooking.js"></script>
 <script src ="deleteBooking.js"></script>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
 
 </body>
 </html>

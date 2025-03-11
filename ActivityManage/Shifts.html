@@ -10,6 +10,12 @@
 </head>
 
 <body>
+
+  <!-- back button -->
+  <div class="back-button-container">
+    <button onclick="goBack()" class="back-button">← Back</button>
+  </div>
+
   <h2> Select an  Instructor</h2>
   <div class ="dropdown-container">
     <select id="selectInstructor" onchange="fetchShifts()">
@@ -20,6 +26,12 @@
 
   <h2>Assigned Shifts</h2>
   <div id="shiftsContainer"></div>
+
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
 
 
 </body>
