@@ -54,11 +54,23 @@
         /* Input fields */
         input {
             width: 100%;
-            padding: 10px 150px; /* 10px top/bottom, 20px left/right */
+            padding: 10px 12px; /* 10px top/bottom, 20px left/right */
             border: 2px solid #007bff;
             border-radius: 5px;
             font-size: 1rem;
             outline: none;
+        }
+
+        /* Textarea for description felt*/
+        textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            font-size: 1rem;
+            outline: none;
+            height: 150px; /* Set a higher height for the description field */
+            resize: vertical; /* Allow resizing vertically */
         }
 
         /* Button container */
@@ -114,21 +126,19 @@
             <input type="text" id="name" name="name" required>
         </div>
 
+
+        <!--make description felt to textarea insted of input so the felt is taller and can contain more text-->
         <div class="form-group"><label for="description">Description and Requirements:</label>
-            <input type="text" id="description" name="description" required>
+            <textarea type="text" id="description" name="description" required></textarea>
         </div>
 
-
-
-        <!--wrapping the price and duration input fields with <span> elements to create containers for the input and the unit labels.-->
         <div class="form-group"><label for="price">Price:</label>
-                <input type="number" id="price" name="price" min="0" placeholder="0 Kr"/>
+                <input type="number" id="price" name="price" min="0" required>
         </div>
 
 
         <div class="form-group"><label for="duration">Duration of the session (in minutes):</label>
-                <input type="number" id="duration" name="duration" placeholder="0 min">
-                <span id="durationUnit"></span>
+                <input type="number" id="duration" name="duration" required>
         </div>
 
 
