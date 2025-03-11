@@ -5,9 +5,10 @@ document.addEventListener("DOMContentLoaded", function () {
     if (phoneNumber) {
         fetchPhoneDetails(phoneNumber);
     } else {
-        alert("Phone number not provided.");
+        console.log("Phone number not provided yet.");
     }
 });
+
 
 function fetchPhoneDetails(phone) {
 
@@ -58,10 +59,8 @@ function updatedBooking() {
 
 
     const activityName = document.getElementById("activity").value;
-
-    const candyElement = document.getElementById("candy");
-    const candyValue = candyElement.value; // Get selected candy value
-
+    const candyName = document.getElementById("candy").value;
+    const candyPrice = document.getElementById("candyPrice").value;
 
 
     const updatedBooking = {
@@ -73,16 +72,15 @@ function updatedBooking() {
         activity: {
             name: activityName  // Send activity as an object with a name
         },
-
+        candy: {
+            name: candyName,
+            price: candyPrice
+        },
         numberOfGuests: parseInt(document.getElementById("numberOfGuests").value) || 0,
         bookingDate: document.getElementById("bookingDate").value,
         bookingTime: document.getElementById("bookingTime").value
     };
 
-    if (candyValue !== "0") {
-        updatedBooking.candy = {
-            candyId: parseInt(candyValue)
-        };
 
     console.log("Sending Updated Booking:", JSON.stringify(updatedBooking, null, 2));
 
@@ -124,5 +122,5 @@ function updatedBooking() {
 function editBooking(phoneNumber) {
     window.location.href = `editBooking.html?phone=${phoneNumber}`;
 }
-    }
+
 
