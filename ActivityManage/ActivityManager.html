@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../myCSS.css">
+
     <title>Activity manager homepage</title>
 
     <style>
@@ -66,5 +68,19 @@
 
 
 </div>
+
+
+<!--Log Out button -->
+<div class="logout-button-container">
+    <button onclick="logout()" class="logout-button">Log Out</button>
+</div>
+
+<script>
+    function logout() {
+        window.location.href = "../login.html";
+    }
+</script>
+
+
 </body>
 </html>
