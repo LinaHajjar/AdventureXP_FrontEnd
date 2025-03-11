@@ -107,6 +107,15 @@
         }
 
 
+        .searchbooking input {
+            text-align: left !important; /* Force left alignment */
+            direction: ltr !important; /* Ensure left-to-right text direction */
+            unicode-bidi: plaintext !important; /* Override inherited settings */
+            white-space: nowrap; /* Prevent unintended line breaks */
+        }
+
+
+
     </style>
 </head>
 
@@ -126,7 +135,7 @@
     <div class = "searchbooking">
 
         <label for ="phone"> Booking: </label>
-        <input id="phone" name = "phone" placeholder = "search... [phone]" type ="booking">
+        <input id="phone" name = "phone" placeholder = "search... [phone]" type ="text">
 
         <button type ="button" onclick="searchBooking()"> search booking</button>
 
