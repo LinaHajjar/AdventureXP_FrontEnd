@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../myCSS.css">
+
     <title>Add A New Activity</title>
     <style>
         /* Center everything */
@@ -117,7 +119,15 @@
 
     </style>
 </head>
+
+
 <body>
+
+<!-- back button -->
+    <div class="back-button-container">
+        <button onclick="goBack()" class="back-button">← Back</button>
+    </div>
+
     <h1> Add a new activity</h1>
 
     <form id="bookingForm">
@@ -152,6 +162,12 @@
     <p id="message" style="color: green; font-weight: bold;"></p>
 
     <script src="SubmitActivity.js"></script>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 
 </body>
 </html>
