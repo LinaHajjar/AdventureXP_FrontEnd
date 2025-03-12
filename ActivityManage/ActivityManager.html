@@ -24,10 +24,12 @@
             font-size: 2.5rem;
         }
 
-        /* Flexbox container for buttons */
+        /* Change from flex to grid for a two-row (3 and 3) layout */
         .activity-options {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(3, 250px); /* 3 columns of fixed width */
             gap: 20px;
+            justify-content: center;
         }
 
         /* Style the buttons */
@@ -64,6 +66,7 @@
     <a href="CandyPrices.html">Modify candy prices</a>
     <a href="SeAllInstructors.html">See all instructors</a>
     <a href="AddCandy.html">Add Candy</a>
+    <a href="Shifts.html">See all Shifts</a>
 
 
 

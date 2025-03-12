@@ -48,7 +48,6 @@ function loadBookingData(booking) {
 
 function updatedBooking() {
     const pphone = document.getElementById("phone").value.trim();
-
     let phone = encodeURIComponent(pphone); // Encode special characters
 
     if (!phone) {
@@ -56,12 +55,14 @@ function updatedBooking() {
         return;
     }
 
-
-
     const activityName = document.getElementById("activity").value;
-    const candyName = document.getElementById("candy").value;
-    const candyPrice = document.getElementById("candyPrice").value;
+    let candyName = document.getElementById("candy").value;
+    let candyPrice = document.getElementById("candyPrice").value;
 
+    // If no candy is selected (empty string), set candyObject to null
+    let candyObject = (candyName === "" || candyName === null)
+        ? null
+        : { name: candyName, price: candyPrice };
 
     const updatedBooking = {
         bookingId: document.getElementById("bookingId").value,
@@ -72,15 +73,11 @@ function updatedBooking() {
         activity: {
             name: activityName  // Send activity as an object with a name
         },
-        candy: {
-            name: candyName,
-            price: candyPrice
-        },
+        candy: candyObject,  // Will be null if no candy is selected
         numberOfGuests: parseInt(document.getElementById("numberOfGuests").value) || 0,
         bookingDate: document.getElementById("bookingDate").value,
         bookingTime: document.getElementById("bookingTime").value
     };
-
 
     console.log("Sending Updated Booking:", JSON.stringify(updatedBooking, null, 2));
 
@@ -95,7 +92,6 @@ function updatedBooking() {
             // Check if the response is successful
             if (!response.ok) {
                 console.error("Failed response: ", response.status, response.statusText);
-
                 // Check if the response is JSON
                 const contentType = response.headers.get("Content-Type");
                 if (contentType && contentType.includes("application/json")) {
@@ -118,6 +114,7 @@ function updatedBooking() {
             alert(`Failed to update booking. Error: ${error.message}`);
         });
 }
+
 
 function editBooking(phoneNumber) {
     window.location.href = `editBooking.html?phone=${phoneNumber}`;

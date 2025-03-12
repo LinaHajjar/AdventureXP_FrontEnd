@@ -3,20 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../myCSS.css">
     <title>List of all the Reservations</title>
     <style>
         /* Center content */
         body {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f8ff;
             flex-direction: column;
+            justify-content: flex-start; /* Start content at the top */
+            align-items: center;
+            min-height: 100vh; /* Minimum height of viewport, but grows if needed */
+            background-color: #f0f8ff;
             text-align: center;
             font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 20px 0; /* Add some vertical padding */
         }
+
 
         .main-content {
             width: 80%;
