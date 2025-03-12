@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../CSS_Back_button.css">
+
     <title>List of all the activities</title>
     <style>
         /* Center content */
@@ -108,7 +110,10 @@
     </style>
 </head>
 <body>
-
+<!-- back button -->
+<div class="back-button-container">
+    <button onclick="goBack()" class="back-button">← Back</button>
+</div>
 <div class="main-content">
 
     <h1>List of All the activities</h1>
@@ -134,5 +139,14 @@
 </div>
 
 <script src="SeAllActivities.js"></script>
+
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+
+
 </body>
 </html>
