@@ -1,0 +1,8 @@
+{
+  "routes": [
+    {
+      "route": "/",
+      "serve": "/header-footer-Pages/Homepage.html"
+    }
+  ]
+}
