@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npm install && echo \"Build step completed\"",
+    "build": "npm install && npm run prepare-build",
+    "prepare-build": "echo \"Build step completed\"",
     "start": "node index.js"
   },
   "private": true
