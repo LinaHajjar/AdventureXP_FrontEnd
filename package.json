@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "echo \"No build needed\"",
+    "build": "npm install && echo \"Build step completed\"",
     "start": "node index.js"
   },
   "private": true
